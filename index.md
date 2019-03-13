@@ -1,3 +1,1 @@
-# Harrison Totty
-
-This is my GitHub page.
+I write code sometimes.
