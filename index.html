@@ -1,0 +1,19 @@
+---
+layout: default
+title: /
+---
+
+<header>
+  <p class="username"><a href="./" target="_self">Harrison Totty</a></p>
+</header>
+<main>
+  {% for post in site.posts %}
+    <article>
+      <header class="heading">
+        <h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a> </h1>
+        <p class="timestamp">{{ post.date | date: "%b %e %Y" }}</p>
+      </header>
+    </article>
+  {% endfor %}
+</main>
+<footer><a href="/" style="border:0">harrisontotty.github.io</a> &nbsp;<a href="/about">about</a> &nbsp;<a href="https://twitter.com/HarrisonTotty">twitter</a> &nbsp;<a href="https://github.com/HarrisonTotty">github</a></footer>
