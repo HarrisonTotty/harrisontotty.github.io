@@ -83,7 +83,94 @@ U0 CopyTo(char *source="T:/Doc/Files", char *dest)
 CopyTo(,"T:/Doc/Files2");
 ```
 
+Similarly to Python and other modern languages, functions can have variable argument counts, here specified with `(...)` in the function definition. The function body may then access its arguments by utilizing the built-in `argc` and `argv` variables:
+
+```c
+I64 Sum(...)
+{
+    I64 i,tot = 0
+    for (i = 0; i < argc; i++)
+        tot += argv[i];
+    return tot;
+}
+
+I64 x = Sum(3, 4, 5); // x = 12
+```
+
+Note that `for` loops in _HolyC_ don't require curly braces if they only perform one operation.
+
 Finally, _HolyC_ does _not_ have a required `Main()` function. Expressions outside of functions are simply evaluated from top to bottom in source. This also allows the programming language to act like a shell, and in-fact _is_ the shell of TempleOS.
 
-## Misc
+## Switch Statements
 
+Terry explained multiple times how switch statements are the most powerful constructs in _HolyC_. In the language, switch statements always utilize jump tables in assembly (and thus the documentation mentions to not use them in cases with large/sparse value ranges). The ones in _HolyC_ offer quite a range of convenience improvements over their _C_ counterparts. For starters, _HolyC_ offers experienced programmers an _unchecked variant_ of the switch expression, denoted via `switch [foo]` instead of `switch (foo)`. In addition, the language also has implicit case values and even case ranges!
+
+```c
+I64 i;
+switch (i) {
+    case: "zero\n"; break;         // Implicit case statements start at 0
+    case: "one\n"; break;          // ... and increment by 1 each time.
+    case: "two\n"; break;
+    case 3: "three\n"; break;      // Explicit cases work as you would expect.
+    case 3...8: "others\n"; break; // Cases 3 through 8 will print "others\n".
+}
+```
+
+Note that in the above example I technically skipped explaining another quirk with _HolyC_, which is that constant (literal) string expressions all by themselves will automatically be sent to `Print`. This lets you do neat things like:
+
+```c
+U0 PrintMessage(char *first, char *last)
+{
+    "Hello person!\n";
+    "Your name is %s %s.\n", first, last;
+}
+```
+
+Back to switch statements, they may actually be nested into what are known as "sub_switch" statements via the `start` and `end` keywords. Below is the example code included in TempleOS for this functionality:
+
+```c
+U0 SubSwitch ()
+{
+    I64 i;
+    for (i=0;i<10;i++)
+        switch(i) {
+            case 0: "Zero ";     break;
+            case 2: "Two ";      break;
+            case 4: "Four ";     break;
+            start:
+                "[";
+                case 1: "One";   break;
+                case 3: "Three"; break;
+                case 5: "Five";  break;
+            end:
+                "] ";
+                break;
+        }
+    '\n';
+}
+
+SubSwitch;
+```
+
+The above code will print `Zero [One] Two [Three] Four [Five]` to the command line.
+
+## `#exe {}`
+
+This is my personal favorite feature. This expression allows you to write code or execute programs whose output is embedded into the rest of your source code at compile time. This let you do things like:
+
+```c
+#include #exe { /* code to find location of library */ }
+```
+
+This is essentially _HolyC_'s solution to _macros_.
+
+## Misc Features & Quirks
+
+* In _HolyC_, you can `Free()` a null pointer.
+* The stack does not grow because _HolyC_ does not utilize virtual memory.
+* There is no `continue` keyword in the language. Instead, Terry urges programmers to use `goto`'s instead.
+* There is no `#define` capability. Terry's explanation for this is that he's just "not a fan".
+* The `typedef` keyword is replaced with `class`.
+* `#include` does not support `<>` for importing standard libraries. All `#include` statements must use `""`.
+* There is no type checking what-so-ever.
+* `try {}`, `catch {}`, and `throw` are supported, however `throw` only returns up to an 8-byte `char` argument, which may be accessed in a `catch {}` as `Fs->except_ch`.
