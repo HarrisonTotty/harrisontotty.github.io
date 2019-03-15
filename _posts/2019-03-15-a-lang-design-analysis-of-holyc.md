@@ -55,7 +55,7 @@ x = Foo();  // C
 y = Foo;    // HolyC
 ```
 
-Speaking of default arguments, in HolyC it's a-okay to have default args at any point in the function definition like so:
+Speaking of default arguments, in _HolyC_ it's a-okay to have default args at any point in the function definition like so:
 
 ```c
 // ----- Function Definition -----
