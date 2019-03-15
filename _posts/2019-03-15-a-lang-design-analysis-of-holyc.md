@@ -13,7 +13,7 @@ _HolyC_, as the name would imply, is a _C-like_ programming language with a numb
 
 This article won't cover the assembly layer of TempleOS, but the above is interesting nonetheless.
 
-## Types in HolyC
+## Numeric Types in HolyC
 
 _HolyC_ allows the following numeric types: `U0`, `I8`, `U8`, `I16`, `U16`, `I32`, `U32`, `I64`, `U64`, and `F64`. As you probably would guess, a `U` vs `I` prefix denotes a signed/unsigned integer/float and the numerical value represents the number of bits associated with the type. The two most interesting types are `U0` and `F64`. 
 
@@ -47,4 +47,43 @@ U0 Main()
 ```
 
 ## Functions
+
+Functions are where you start to see some of the more drastic differences. For starters, functions that are invoked without arguments (or without overriding any default arguments) may be syntactically shortened to just the function name followed by a semicolon.
+
+```c
+// The following are equivalent.
+
+x = Foo();  // C
+y = Foo;    // HolyC
+```
+
+Speaking of default arguments, in HolyC it's a-okay to have default args at any point in the function definition like so:
+
+```c
+// ----- Function Definition -----
+I32 Foo(I32 i=8, I32 j)
+{
+    return (i + j)
+}
+
+// ----- Invocation -----
+I32 x;
+x = Foo(,6);
+```
+
+Note the prepended comma in the function invocation arguments. At first this seems pretty useless (why wouldn't you just re-order your args?) but it _does_ allow you to write functions with some logical order:
+
+```c
+// Copies the files in "source" path to the "destination" path
+U0 CopyTo(char *source="T:/Doc/Files", char *dest)
+{
+    // ...
+}
+
+CopyTo(,"T:/Doc/Files2");
+```
+
+Finally, _HolyC_ does _not_ have a required `Main()` function. Expressions outside of functions are simply evaluated from top to bottom in source. This also allows the programming language to act like a shell, and in-fact _is_ the shell of TempleOS.
+
+## Misc
 
