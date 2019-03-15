@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
 title: Harrison Totty
 description: The personal website of Harrison Totty
+baseurl: "/"
+permalink: "/p/:title"
