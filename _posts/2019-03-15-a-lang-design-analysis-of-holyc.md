@@ -11,7 +11,7 @@ _HolyC_, as the name would imply, is a _C-like_ programming language with a numb
 
 This article won't cover the assembly layer of TempleOS, but the above is interesting nonetheless.
 
-## Numeric Types in HolyC
+# Numeric Types in HolyC
 
 _HolyC_ allows the following numeric types: `U0`, `I8`, `U8`, `I16`, `U16`, `I32`, `U32`, `I64`, `U64`, and `F64`. As you probably would guess, a `U` vs `I` prefix denotes a signed/unsigned integer/float and the numerical value represents the number of bits associated with the type. The two most interesting types are `U0` and `F64`. 
 
@@ -44,7 +44,7 @@ U0 Main()
 }
 ```
 
-## Functions
+# Functions
 
 Functions are where you start to see some of the more drastic differences. For starters, functions that are invoked without arguments (or without overriding any default arguments) may be syntactically shortened to just the function name followed by a semicolon.
 
@@ -99,7 +99,7 @@ Note that `for` loops in _HolyC_ don't require curly braces if they only perform
 
 Finally, _HolyC_ does _not_ have a required `Main()` function. Expressions outside of functions are simply evaluated from top to bottom in source. This also allows the programming language to act like a shell, and in-fact _is_ the shell of TempleOS.
 
-## Switch Statements
+# Switch Statements
 
 Terry explained multiple times how switch statements are the most powerful constructs in _HolyC_. In the language, switch statements always utilize jump tables in assembly (and thus the documentation mentions to not use them in cases with large/sparse value ranges). The ones in _HolyC_ offer quite a range of convenience improvements over their _C_ counterparts. For starters, _HolyC_ offers experienced programmers an _unchecked variant_ of the switch expression, denoted via `switch [foo]` instead of `switch (foo)`. In addition, the language also has implicit case values and even case ranges!
 
@@ -152,7 +152,7 @@ SubSwitch;
 
 The above code will print `Zero [One] Two [Three] Four [Five]` to the command line.
 
-## `#exe {}`
+# The `#exe {}` Expression
 
 This is my personal favorite feature. This expression allows you to write code or execute programs whose output is embedded into the rest of your source code at compile time. This let you do things like:
 
@@ -162,7 +162,7 @@ This is my personal favorite feature. This expression allows you to write code o
 
 This is essentially _HolyC_'s solution to _macros_.
 
-## Misc Features & Quirks
+# Misc Features & Quirks
 
 * In _HolyC_, you can `Free()` a null pointer.
 * The stack does not grow because _HolyC_ does not utilize virtual memory.
