@@ -113,7 +113,7 @@ switch (i) {
     case: "one\n"; break;          // ... and increment by 1 each time.
     case: "two\n"; break;
     case 3: "three\n"; break;      // Explicit cases work as you would expect.
-    case 3...8: "others\n"; break; // Cases 3 through 8 will print "others\n".
+    case 4...8: "others\n"; break; // Cases 4 through 8 will print "others\n".
 }
 ```
 
