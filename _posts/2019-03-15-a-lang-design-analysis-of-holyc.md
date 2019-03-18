@@ -28,19 +28,19 @@ U0 Main()
 {
     I16 i1;
     I32 j1;
-    j1=i1=0x12345678;           // i1 is 0x5678 but j1 is 0x12345678
+    j1=i1=0x12345678;  // i1 is 0x5678 but j1 is 0x12345678
     
     I64 i2=0x8000000000000000;
-    Print("%X\n", i2>>1);       // Prints 0xC0000000000000000
+    Print("%X\n", i2>>1);  // Prints 0xC0000000000000000
     
     U64 u3=0x8000000000000000;
-    Print("%X\n", u3>>1);       // Prints 0x40000000000000000
+    Print("%X\n", u3>>1);  // Prints 0x40000000000000000
     
-    I32 i4=0x80000000;          // This is loaded into a 64-bit register variable.
-    Print("%X\n", i4>>1);       // Prints 0x40000000
+    I32 i4=0x80000000;     // This is loaded into a 64-bit register variable.
+    Print("%X\n", i4>>1);  // Prints 0x40000000
     
     I32 i5=-0x80000000;
-    Print("%X\n", i5>>1);       // Prints 0xFFFFFFFFC0000000
+    Print("%X\n", i5>>1);  // Prints 0xFFFFFFFFC0000000
 }
 ```
 
