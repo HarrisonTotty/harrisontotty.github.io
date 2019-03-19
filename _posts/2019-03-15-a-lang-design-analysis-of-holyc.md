@@ -63,7 +63,7 @@ Speaking of default arguments, in _HolyC_ it's a-okay to have default args at an
 // ----- Function Definition -----
 I32 Foo(I32 i=8, I32 j)
 {
-    return (i + j)
+    return (i + j);
 }
 
 // ----- Invocation -----
@@ -88,7 +88,7 @@ Similarly to Python and other modern languages, functions can have variable argu
 ```c
 I64 Sum(...)
 {
-    I64 i,tot = 0
+    I64 i,tot = 0;
     for (i = 0; i < argc; i++)
         tot += argv[i];
     return tot;
