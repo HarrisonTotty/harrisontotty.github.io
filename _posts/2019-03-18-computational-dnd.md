@@ -15,13 +15,13 @@ Rolling physical dice is _fun_. I try to roll physical dice whenever I can, howe
 I've written numerous programs and scripts to facilitate the dice-rolling process, but the latest iteration was a Python script I wrote called [roll](https://github.com/HarrisonTotty/roll). `roll` essentially works by first concatenating all positional arguments into a single string and then replacing all substrings of the form `\d*[dD]\d+` with their "rolled" results. I distinguish `XdY` from `XDY` such that `XdY` will compute the sum of the results, whereas `XDY` will only return the list of results. The resulting string itself is then computed via the Python interpreter via an `eval()` call. This is so the user can embed valid Python into their "roll string". For example:
 
 ```bash
-$ roll 'sum(highest(3D8, 2))' + 3d6 + 2
+$ roll 'sum(h(3D8, 2))' + 3d6 + 2
 ```
 
 which essentially flows like so:
 
 ```python
-roll_str = 'sum(highest(3D8, 2)) + 3d6 + 2'
+roll_str = 'sum(h(3D8, 2)) + 3d6 + 2'
 
 # ... replacement code here ...
 
