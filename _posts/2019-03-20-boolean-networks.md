@@ -41,7 +41,7 @@ At each iteration of training, the network randomizes a particular number of neu
 
 Returning to our example from the _Network Architecture_ section, let's say that we aim to create a network to classify a series of binary-valued vectors of length $$n = 8$$ into three possible classifications _A_, _B_, and _C_, based on whether the occurrence of "true" values in a particular vector are on the "left" half of the vector, the "right" half of the vector, or distributed between both halves of the vector. Let's start by defining some training data and some test data:
 
-```mma
+```
 training = {
 {1,1,0,0,0,0,0,0} -> "A", {1,1,1,0,0,0,0,0} -> "A", {0,1,0,0,0,0,0,0} -> "A", {1,1,1,0,0,0,0,0} -> "A",
 {0,1,1,1,0,0,0,0} -> "A", {1,1,1,1,0,0,0,0} -> "A", {1,1,0,1,0,0,0,0} -> "A", {0,1,0,1,0,0,0,0} -> "A",
@@ -58,13 +58,13 @@ test = Table[RandomInteger[1, 8], 10];
 
 Now lets create a new network of $$l = 4$$ which expects an input vector of length $$n = 8$$:
 
-```mma
+```
 net = BooleanNetwork[8, 4];
 ```
 
 Let's looks at how accurate the network is initially:
 
-```mma
+```
 AccuracyInfo[net, training]
 ```
 
@@ -81,7 +81,7 @@ Output Classifications      : {{0,1,1,1,0,0,0,0} -> A, {0,0,0,0,1,1,1,0} -> B, {
 
 That's actually not that bad for a random starting point! Now let's train the network and re-test our accuracy:
 
-```mma
+```
 {net, changed} = Train[net, training];
 
 AccuracyInfo[net, training]
@@ -106,7 +106,7 @@ In the above figure, we can see that the neurons at locations `{1,4}`, `{2,1}`, 
 
 Let's try re-classifying all of the training data (note that the `Classify` function here replaces the built-in one):
 
-```mma
+```
 Table[
     Classify[net, training[[i, 1]]],
     {i, Length[training[[All, 1]]]}
@@ -115,13 +115,13 @@ Table[
 
 (output):
 
-```mma
+```
 {"A","A","A","A","A","A","A","A","A","A","B","B","B","B","B","B","B","B","B","B","C","C","C","C","C","C","C","C","C","C","C","C"}
 ```
 
 Finally, let's test the network against some new data:
 
-```mma
+```
 Table[
     test[[i]] -> Classify[net,test[[i]]],
     {i, Length[test]}
@@ -130,7 +130,7 @@ Table[
 
 (output):
 
-```mma
+```
 {
 {1,1,1,1,0,1,1,1} -> "C",
 {0,1,1,0,0,1,0,0} -> "C",
@@ -149,7 +149,7 @@ Here we can see that it chose most of the input vectors to be mapped to _C_, how
 
 The final neat thing to show is that since our network is actually just a set of repeated Boolean function operations over the input, we can actually "collapse" the entire network into a single pure function expression like so:
 
-```mma
+```
 Simplify[
     EvaluateNetwork[
         net,
@@ -160,7 +160,7 @@ Simplify[
 
 (output - replacing `in[i]` with `#i` and converting it into a pure function):
 
-```mma
+```
 netfn = {
     #6 || #7 || #8, 
     #1 || #2 || #3 || #4,
