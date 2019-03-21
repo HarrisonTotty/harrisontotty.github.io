@@ -6,7 +6,6 @@ title: "Machine Learning With Boolean Networks and the Wolfram Summer School"
 In June of 2016 I got the chance to attend the [Wolfram Summer School](https://education.wolfram.com/summer/school/) program held at Bently University in Boston, where I spent three weeks working on a project implementing [machine learning via Boolean networks](https://education.wolfram.com/summer/school/alumni/2016/totty/). It was breath of fresh air from the "less-technical" environment I was used to in Florida, and a _lot_ of fun. I met some of the smartest people I've ever had the pleasure of working with. This article will be one-part my experience at the Wolfram Summer school and one-part delving into the technical details of my final project.
 
 
-----
 # Application
 
 I was originally encouraged by my Differential Equations professor to apply to the summer school program back in 2015. I was actually in the middle of writing [my own computer algebra system](https://github.com/HarrisonTotty/Simplex.Math) at the time (a project that was ultimately abandoned) - from an inspiration to write the _C#_ equivalent to [sympy](https://www.sympy.org/en/index.html) and [Mathematica](https://www.wolfram.com/mathematica/). So I sent in my resume, filled out a questionnaire, sat in on an interview, and was eventually given a copy of Mathematica and a set of practice questions. Here's an example practice question:
@@ -16,7 +15,6 @@ I was originally encouraged by my Differential Equations professor to apply to t
 I remember stressing over them quite a bit, with the assumption that not completing all of them would put me "behind the curve" compared to the other students. I was the only one from a "community college", so I figured completing all of the questions would be the best way to "prove myself". Yet irony has a funny way of shattering expectations - it turned out that I was the only student who completed all 34 questions (they were just _practice_ questions after all, not some "competition") - not to say that the other students weren't _able_ to complete the other questions, but they just figured a dozen or so questions was enough "practice".
 
 
-----
 # Machine Learning with Boolean Networks
 
 ## Network Architecture
@@ -180,7 +178,6 @@ As I concluded in my report:
 > It appears as though even relatively small boolean networks can be trained for machine learning applications using simple Monte Carlo techniques. However, the practicality of such architectures is currently unclear given the slow pace of training such networks. For this reason, it is also currently unclear how such networks scale in accuracy with respect to larger input vectors. It could be questioned whether such networks are theoretically capable of learning any input that may be converted to a binary representation. A critical question is whether such networks are capable of training on any data that can be converted to a binary representation. Is the apparent learning only a response to the spatial distribution of features in the input vector? It is also still quite unclear how well boolean networks are capable of accurately training to larger input vectors. Perhaps such networks are only capable of training on small vector spaces and lose accuracy on larger and larger input vectors. Such questions should be addressed upon the formation of improved training techniques ...
 
 
-----
 # Overall Experience
 
 Like I stated above, overall the program was a lot of fun.
