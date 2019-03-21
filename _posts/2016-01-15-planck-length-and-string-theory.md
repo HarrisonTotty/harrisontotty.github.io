@@ -43,7 +43,7 @@ $$t_p \approx 5.4 \times 10^{-44}    (s)$$
 
 $$m_p \approx 2.17 \times 10^{-8}    (kg)$$
 
-The solutions for $$l_p$$ and $$t_p$$ seem to make sense, however $$m_p$$ appears to be abnormally large. In fact, it is roughly $$10^19$$ times larger than the mass of a proton! This number turns out to hold its significance as the largest value a point mass with an elementary charge can hold without collapsing into a black hole!
+The solutions for $$l_p$$ and $$t_p$$ seem to make sense, however $$m_p$$ appears to be abnormally large. In fact, it is roughly $$10^{19}$$ times larger than the mass of a proton! This number turns out to hold its significance as the largest value a point mass with an elementary charge can hold without collapsing into a black hole!
 
 # Beyond 4-Dimensional Spacetime
 
