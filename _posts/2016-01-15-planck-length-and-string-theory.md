@@ -13,22 +13,22 @@ String theories have always been interesting to me. The notion that the world's 
 
 The Planck length $$l_p$$ is commonly considered to be the shortest measurable unit of length for a universe with four ordinary dimensions of spacetime due its value being on many orders of magnitude smaller than length scales that are currently approached by particle accelerators. It is also the length scale at which strings exist in string theory. It forms the basic unit of length in the Planck Unit System. Such units are derived from fundamental physical constants. It is easy to derive Planck length $$l_p$$, time $$t_p$$, and mass $$m_p$$ from the fundamental constants $$G$$ (the Newtonian gravitational constant), $$c$$ (the speed of light), and $$\hbar$$ (the reduced Planck constant) whose values are shown below:
 
-\[G \approx 6.67 \times 10^{−11}    (m^3 / kg \cdot s^2)\]
+$$G \approx 6.67 \times 10^{−11}    (m^3 / kg \cdot s^2)$$
 
-\[c \approx 3 \times 10^8    (m/s)\]
+$$c \approx 3 \times 10^8    (m/s)$$
 
-\[\hbar \approx 1.06 \times 10^{−34}    (kg \cdot m^2 / s)\]
+$$\hbar \approx 1.06 \times 10^{−34}    (kg \cdot m^2 / s)$$
 
 Here are the corresponding dimensional analysis equations for the above constants, where $$L$$ is a unit of length, $$T$$ is a unit of time, and $$M$$ is a unit of mass:
 
-\[[G] = \frac{L^3}{M \cdot T^2}\]
+$$[G] = \frac{L^3}{M \cdot T^2}$$
 
-\[[c] = \frac{L}{T}\]
+$$[c] = \frac{L}{T}$$
 
-\[[\hbar] = \frac{M \cdot L^2}{T}\]
+$$[\hbar] = \frac{M \cdot L^2}{T}$$
 
 If we wish to create a base system of units based on the fundamental constants, then we can set up the following series of equations relating $$G$$, $$c$$, and $$\hbar$$ to $$l_p$$, $$t_p$$, and $$m_p$$:
 
-\[G = 1 \times \frac{(l_p)^3}{m_p (t_p)^2}\]
+$$G = 1 \times \frac{(l_p)^3}{m_p (t_p)^2}$$
 
 {% endraw %}
