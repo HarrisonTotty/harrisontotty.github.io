@@ -180,6 +180,6 @@ As I concluded in my report:
 
 # Overall Experience
 
-Like I stated above, overall the program was a lot of fun.
+Like I stated above, overall the program was a lot of fun. Each day I had the opportunity go to several classes of my choosing on everything from machine learning, to physics, to "pure" mathematics. I even ended-up participating in a Wikipedia meetup event at MIT, where I wrote the article on [Privacy Impact Assessments](https://en.wikipedia.org/wiki/Privacy_Impact_Assessment).
 
 {% endraw %}
