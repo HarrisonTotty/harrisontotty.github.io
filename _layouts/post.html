@@ -5,6 +5,15 @@
   <title>{{ page.title }} - {{ site.title }}</title>
   <link href="/avatar.png" rel="shortcut icon" type="image/x-icon" />
   <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700' rel='stylesheet' type='text/css'>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$$','$$'], ['\\(', '\\)']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <style>
   body {
     font: 16px/1.5em 'Roboto Mono', 'Consolas', 'Andale Mono', 'Monaco', 'Courier New', Courier, monospace;
