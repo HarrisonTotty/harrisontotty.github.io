@@ -90,6 +90,7 @@ tasks:
             echo "Unable to delete $f."
             exit 1
           fi
+        fi
       done
 ```
 
