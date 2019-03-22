@@ -60,6 +60,8 @@ In the remote framework, _tasks_ are distinguished between arbitrary commands, s
 $ remote servers -p -r puppet_off
 ```
 
+Next, we'll see how this feature can be expanded to more complex tasks.
+
 
 # Complex Tasks
 
