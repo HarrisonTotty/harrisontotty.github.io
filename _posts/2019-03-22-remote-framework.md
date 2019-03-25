@@ -76,7 +76,7 @@ targets:
 tasks:
   del:
     desc: 'Deletes the specified path(s) on the specified target server(s).'
-    cmd: >-
+    cmd: |
       if [ "$#" -eq 0 ]; then
         echo 'Please specify one or more files to delete.'
         exit 1
