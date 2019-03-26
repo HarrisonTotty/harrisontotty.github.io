@@ -104,7 +104,7 @@ del  :  Deletes the specified path(s) on the specified target server(s).
 We can now invoke this new task to delete `/root/foo.txt` and `/tmp/bar.txt` on all of our servers with the following command:
 
 ```bash
-$ remote servers -p -r 'del:/root/foo.txt:/tmp/bar.txt'
+$ remote servers -p -r 'del /root/foo.txt /tmp/bar.txt'
 ```
 
 Pretty neat huh?
