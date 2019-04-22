@@ -40,7 +40,7 @@ result="$(dlg --sort <<< $profiles)"
 # ... do something with the selected network profile ...
 ```
 
-Some things to take away with the above:
+Some things to take away from the above:
 
 1. Possible dialog choices are piped to *STDIN* of the program.
 
@@ -128,7 +128,7 @@ Okay cool. We now have a basic project structure, so let's move on to dependenci
 
 # Determining Initial Project Dependencies
 
-We know that this project is going to make heavy use of CLI arguments and environment variables, so we should choose a library that offers the most features in that regard. My current favorite in this regard is the [clap](https://crates.io/crates/clap) crate, so let's add it to our `Cargo.toml`:
+We know that this project is going to make heavy use of CLI arguments and environment variables, so we should choose a library that offers the most features in that regard. My current favorite is the [clap](https://crates.io/crates/clap) crate, so let's add it to our `Cargo.toml`:
 
 ```toml
 [package]
