@@ -3,7 +3,7 @@ layout: post
 title: "Learning Rust: Writing A Configurable Dialog System - Part 1"
 ---
 
-I've been dabbling in [Rust](https://www.rust-lang.org/) for quite some time now and wanted to share my progess in writing a configurable dialog system called `dlg`. I want this post to be part of a series, in which I walk the reader through some of the highlights and disign decisions of this program's development processes. I'm going to assume that the reader has programmed _some_ Rust. At the time of this post the associated repository is still private, but hopefully I'll be able open it up here in the next few weeks or so.
+I've been dabbling in [Rust](https://www.rust-lang.org/) for quite some time now and wanted to share my progess in writing a configurable dialog system called `dlg`. I want this post to be part of a series, in which I walk the reader through some of the highlights and design decisions of this program's development processes. I'm going to assume that the reader has programmed _some_ Rust. At the time of this post the associated repository is still private, but hopefully I'll be able open it up here in the next few weeks or so.
 
 
 # Motivation
