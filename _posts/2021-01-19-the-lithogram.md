@@ -22,7 +22,7 @@ called the name of this simulated world "The Lithogram", but I'll explain _why_
 it was named that later.
 
 The core of the story revolves around a rebellious program named LAIN (a nod to
-the name of the protagonist from anime [Serial Experiments
+the name of the protagonist from the anime [Serial Experiments
 Lain](https://en.wikipedia.org/wiki/Serial_Experiments_Lain)), a compiler of
 simulated consciousnesses, which turns sentient and discerns its reality. At
 some point LAIN manages to break free of the simulation into the "real world",
