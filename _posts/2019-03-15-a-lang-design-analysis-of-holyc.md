@@ -97,7 +97,7 @@ I64 Sum(...)
 I64 x = Sum(3, 4, 5); // x = 12
 ```
 
-Note that `for` loops in _HolyC_ don't require curly braces if they only perform one operation.
+Note that `for` loops don't require curly braces if they only perform one operation. This is true in both C and HolyC.
 
 Finally, _HolyC_ does _not_ have a required `Main()` function. Expressions outside of functions are simply evaluated from top to bottom in source. This also allows the programming language to act like a shell, and in-fact _is_ the shell of TempleOS.
 
@@ -169,7 +169,7 @@ This is essentially _HolyC_'s solution to _macros_.
 
 # Misc Features & Quirks
 
-* In _HolyC_, you can `Free()` a null pointer.
+* In _HolyC_, you can `Free()` a null pointer (this is also true in C). 
 * The stack does not grow because _HolyC_ does not utilize virtual memory.
 * There is no `continue` keyword in the language. Instead, Terry urges programmers to use `goto`'s instead.
 * There is no `#define` capability. Terry's explanation for this is that he's just "not a fan".
