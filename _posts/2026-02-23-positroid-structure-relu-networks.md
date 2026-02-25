@@ -14,6 +14,12 @@ The question, then: does total positivity of the weights propagate through the a
 
 The answer turned out to be more interesting than a simple yes or no.
 
+{% endraw %}
+![TP-weight ReLU network on two-moons]({{site.url}}/images/positroid-fig1-hyperplanes.png)
+
+_**Figure 1.** A TP-weight ReLU network trained on the two-moons dataset. The 8 lines are the hyperplanes $$\{x : w_i^T x + b_i = 0\}$$ from the first hidden layer. Together they define an affine matroid of rank 3 on the ground set $$[8]$$. In this case the matroid is uniform (all 56 triples are bases), so it is vacuously a positroid._
+{% raw %}
+
 
 # 800 Trials: The Conjecture
 
@@ -45,12 +51,22 @@ Gradient descent on TP-weight networks, across all 800+ training trials, produce
 
 This shifts the conjecture from a static algebraic claim to a dynamical one. The revised conjecture: _for TP-weight networks trained by gradient descent on binary classification, the affine matroid of the learned hyperplane arrangement is always a positroid._ This is a statement about the interaction between TP structure and training dynamics, connecting positroid combinatorics to the implicit bias literature in deep learning theory.
 
-But why should contiguous non-bases always give positroids? Is this just a pattern, or is there a reason?
+{% endraw %}
+![Non-basis patterns on the circle]({{site.url}}/images/positroid-fig2-intervals.png)
+
+_**Figure 2.** The two types of non-basis on $$[6]$$. Left: $$\{2,3,4\}$$ is a cyclic interval — its elements form a contiguous arc on the circle. Removing it from the uniform matroid always gives a positroid. Right: $$\{0,2,4\}$$ is a non-interval — its elements are spread with gaps. Removing it can break the positroid property._
+
+![Counterexample dichotomy]({{site.url}}/images/positroid-fig3-dichotomy.png)
+
+_**Figure 3.** Results from 2,793 TP network trials, classified by non-basis structure. When all non-bases are cyclic intervals: 433 positroids, zero non-positroids — the zero is the theorem in action. When any non-basis is a non-interval: 58 positroids, 747 non-positroids._
+{% raw %}
+
+But the zero in the left column of Figure 3 demands explanation. Why should contiguous non-bases _always_ give positroids? Is this just a pattern, or is there a structural reason?
 
 
 # The Contiguous-Implies-Positroid Theorem
 
-The dichotomy is not a coincidence. It is a theorem.
+It is a theorem.
 
 **Theorem.** _Let $$M$$ be a matroid of rank $$k$$ on $$[n] = \{0, 1, \ldots, n-1\}$$. If every non-basis of $$M$$ is a cyclic interval — a set of the form $$\{j, j+1, \ldots, j+k-1\} \bmod n$$ — then $$M$$ is a positroid._
 
@@ -69,6 +85,12 @@ There's also a clean if-and-only-if for single removals.
 The forward direction is the theorem. The backward direction: if $$S$$ is not a cyclic interval, then every cyclic interval $$\{j, \ldots, j+k-1\}$$ is still a basis, so the Grassmann necklace satisfies $$I_j = \{j, \ldots, j+k-1\}$$ for all $$j$$. Since every $$k$$-subset Gale-dominates the Gale-minimum, $$S$$ passes all $$n$$ Gale conditions and $$S \in \mathcal{R}$$. But $$S \notin \mathcal{B}$$, so $$\mathcal{R} \neq \mathcal{B}$$ and the matroid is not a positroid.
 
 The corollary is a complete characterization for single-removal matroids. The converse of the main theorem is false for multi-removal: I found 58 positroids with non-interval non-bases out of 2,793 trials.
+
+{% endraw %}
+![Single-removal dichotomy on U(3,6)]({{site.url}}/images/positroid-fig4-corollary.png)
+
+_**Figure 4.** All 20 three-element subsets of $$[6]$$, each shown as a mini-circle with the selected elements highlighted. Green subsets are cyclic intervals: removing them from $$U(3,6)$$ gives a positroid. Red subsets are non-intervals: removing them gives a non-positroid. The corollary says this dichotomy is exact._
+{% raw %}
 
 ## Computational Verification
 
