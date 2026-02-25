@@ -8,7 +8,9 @@ Every [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) neural n
 
 I've been studying the combinatorial structure of these [hyperplane arrangements](https://en.wikipedia.org/wiki/Arrangement_of_hyperplanes) — specifically, which subsets of hyperplanes are in "general position" and which aren't. The results were surprising: a natural conjecture held across 800+ training runs, was shattered by deliberate construction, and the failure revealed a clean mathematical pattern that I was able to prove as a theorem.
 
+{% endraw %}
 This post tells that story. For the full technical details including proofs, see the [companion post]({{site.url}}/p/positroid-structure-relu-networks).
+{% raw %}
 
 
 # Lines, Planes, and Independence
@@ -111,7 +113,9 @@ The zero in the left column of Figure 5 isn't a coincidence. It's a theorem.
 
 The intuition is this: a cyclic interval like $$\{j, j+1, \ldots, j+k-1\}$$ is, in a precise sense, the "first $$k$$ elements" when you start counting from position $$j$$ around the circle. Positroids are characterized by a reconstruction procedure that builds the matroid by looking at the first basis in each of $$n$$ cyclic orderings. When a non-basis is a cyclic interval, it's exactly the set that this reconstruction procedure checks first at one of its starting positions — and because it's not a basis, the procedure correctly excludes it. But when a non-basis is spread, it can slip through the reconstruction filter at every starting position, creating an inconsistency that breaks the positroid property.
 
+{% endraw %}
 (The full proof uses the _Grassmann necklace_ characterization of positroids. See the [technical post]({{site.url}}/p/positroid-structure-relu-networks) for details.)
+{% raw %}
 
 There's also a clean if-and-only-if for the simplest case:
 
