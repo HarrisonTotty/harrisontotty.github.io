@@ -130,4 +130,6 @@ To make the proof concrete, here are four cases that illustrate the mechanism.
 
 I conjectured that TP-weight ReLU networks always produce positroid activation matroids, supported the conjecture with 800+ trials, disproved it by constructing 12,642 counterexamples, discovered a clean dichotomy between contiguous and spread non-basis patterns, proved a theorem explaining the dichotomy, and reformulated the conjecture as a statement about the implicit bias of gradient-based training. The revised conjecture — that trained TP networks only visit positroid matroids because gradient descent avoids non-interval non-basis patterns — connects positroid combinatorics to a central question in deep learning theory.
 
+All experiment code — including the training loop, matroid construction, positroid verification, and counterexample search — is available at [github.com/HarrisonTotty/positroid-structure-relu-networks](https://github.com/HarrisonTotty/positroid-structure-relu-networks).
+
 {% endraw %}

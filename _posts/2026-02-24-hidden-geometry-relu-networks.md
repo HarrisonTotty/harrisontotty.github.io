@@ -149,4 +149,8 @@ If true, this connects positroid combinatorics to the _implicit bias_ of gradien
 
 **What happens with deeper networks?** All experiments used single-hidden-layer networks. Multi-layer networks compose multiple hyperplane arrangements, and the interaction between layers could produce richer matroid structure.
 
+---
+
+All experiment code is available at [github.com/HarrisonTotty/positroid-structure-relu-networks](https://github.com/HarrisonTotty/positroid-structure-relu-networks).
+
 {% endraw %}
