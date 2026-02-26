@@ -36,7 +36,7 @@ _**Figure 1.** Three lines in 2D. Left: general position — the lines form a tr
 
 Not all matroids are created equal. Some have extra structure that makes them especially well-behaved.
 
-Imagine placing the $$H$$ hyperplane labels $$\{0, 1, \ldots, H-1\}$$ around a circle, like hours on a clock. A [**positroid**](https://en.wikipedia.org/wiki/Positroid) is a matroid whose combinatorial structure is compatible with this circular ordering in a precise sense. Positroids were discovered by [Alexander Postnikov](https://math.mit.edu/~apost/) in his study of the [_totally nonnegative Grassmannian_](https://en.wikipedia.org/wiki/Grassmannian), a beautiful geometric object from algebraic geometry, and they turn out to have remarkably clean combinatorial descriptions.
+Imagine placing the $$H$$ hyperplane labels $$\{0, 1, \ldots, H-1\}$$ around a circle, like hours on a clock. A [**positroid**](https://arxiv.org/abs/math/0609764) is a matroid whose combinatorial structure is compatible with this circular ordering in a precise sense. Positroids were discovered by [Alexander Postnikov](https://math.mit.edu/~apost/) in his study of the [_totally nonnegative Grassmannian_](https://en.wikipedia.org/wiki/Grassmannian), a beautiful geometric object from algebraic geometry, and they turn out to have remarkably clean combinatorial descriptions.
 
 The key property for us is that positroids are exactly the matroids that arise from [**totally positive (TP) matrices**](https://en.wikipedia.org/wiki/Totally_positive_matrix) — matrices where every square submatrix has nonnegative determinant. TP matrices show up naturally in neural networks when you parameterize the weight matrix using kernels like:
 
