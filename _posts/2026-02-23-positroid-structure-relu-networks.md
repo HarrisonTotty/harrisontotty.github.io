@@ -219,6 +219,16 @@ At index $$\ell = r + 1$$: the $$(r+1)$$-th smallest element of $$I_j$$ is in $$
 
 Since every non-basis is excluded from $$\mathcal{R}$$, we have $$\mathcal{R} \subseteq \mathcal{B}$$. Combined with $$\mathcal{B} \subseteq \mathcal{R}$$: $$\mathcal{B} = \mathcal{R}$$, so $$M$$ is a positroid. $$\square$$
 
+### Corollary: Tail-Collapse Positroid
+
+The experimentally observed pattern is a strict special case of the theorem.
+
+**Corollary.** _Let $$M$$ be a rank-$$k$$ matroid on $$[n]$$. If the non-bases of $$M$$ are exactly the $$k$$-subsets of some cyclic interval $$T \subseteq [n]$$ with $$\lvert T \rvert \geq k$$, then $$M$$ is a positroid._
+
+_Proof._ Every $$k$$-subset of $$T$$ is a non-basis, so $$\operatorname{rank}(T) \leq k - 1$$. Take $$T_S = T$$ for every non-basis $$S$$. The main theorem applies. $$\square$$
+
+This is exactly what TP training produces: the non-bases are all $$\binom{m}{k}$$ subsets of a contiguous tail $$T = \{H-m, \ldots, H-1\}$$, where those $$m$$ hyperplanes span a $$(k-1)$$-dimensional subspace. Note that the individual non-bases within the tail — sets like $$\{5, 7, 9\} \subset \{5, 6, 7, 8, 9\}$$ — are typically _not_ cyclic intervals, so the original Contiguous-Implies-Positroid theorem does not apply to them. The tail-collapse corollary handles these cases because it only requires the _support_ to be a cyclic interval, not each non-basis individually.
+
 ### A Necessary Subtlety
 
 The hypothesis requires $$\operatorname{rank}(T) \leq k - 1$$, not merely $$S \subseteq T$$. The distinction matters: $$U(2,5) \setminus \{\{0,2\}\}$$ has its only non-basis $$\{0,2\}$$ contained in the cyclic interval $$T = \{0,1,2\}$$, but $$\operatorname{rank}(T) = 2 = k$$. The necklace entry $$I_0 = \{0,1\}$$ stays entirely within $$T$$ — no escape to $$F$$ — and $$\{0,2\}$$ passes all Gale conditions, giving $$\{0,2\} \in \mathcal{R} \setminus \mathcal{B}$$. Not a positroid.

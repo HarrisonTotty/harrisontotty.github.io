@@ -152,7 +152,9 @@ If true, this connects positroid combinatorics to the _implicit bias_ of gradien
 
 # Update: TP Structure Matters (2026-03-04)
 
-The first open question — does TP structure matter? — now has an answer: **yes**.
+The theorem explains why contiguous non-basis patterns always give positroids. But it raises a new question: is the TP constraint actually doing the work, or would _any_ trained network produce only contiguous patterns? If unconstrained networks also avoid spread dependencies, the phenomenon is purely about gradient descent and TP structure is a red herring. If they don't, then TP structure and training dynamics are jointly responsible — the most interesting case.
+
+The answer is now in: **TP structure matters.**
 
 I designed a non-TP weight parameterization called **negated bidiagonal** that preserves the key property making exponential networks produce non-trivial matroids (hyperplane normals that converge during training) while breaking total positivity. The construction is: take the usual TP exponential matrix, then multiply it by a bidiagonal matrix with alternating $$\pm$$ signs on the subdiagonal. This scrambles the row ordering just enough to break TP while preserving the training dynamics that create near-collinear normals.
 
