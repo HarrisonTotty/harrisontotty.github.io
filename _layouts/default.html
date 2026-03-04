@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site.title }}</title>
-  <link href="/avatar.png" rel="shortcut icon" type="image/x-icon" />
+  {% seo %}
   <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700' rel='stylesheet' type='text/css'>
   <style>
   body {
@@ -37,7 +38,6 @@
     color: #60728d;
     background-image: linear-gradient(to bottom,#60728d 75%,#60728d 75%);
     text-shadow: none;
-    /* text-shadow: -1px -1px 0 #ddd8cf,1px -1px 0 #ddd8cf,-1px 1px 0 #ddd8cf,1px 1px 0 #ddd8cf; */
     background-repeat: repeat-x;
     background-size: 1px 1px;
     background-position: 0 96%;
@@ -50,9 +50,6 @@
   .heading {
     margin: 0 0 2ch;
     padding: 0;
-  }
-  article.txt p {
-    white-space: pre-wrap;
   }
   .username a {
     text-shadow: none;
@@ -109,7 +106,7 @@
   }
   </style>
 </head>
-<body class="index"}">
+<body class="index">
   {{ content }}
 </body>
 </html>

@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }} - {{ site.title }}</title>
-  <link href="/avatar.png" rel="shortcut icon" type="image/x-icon" />
   <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700' rel='stylesheet' type='text/css'>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        inlineMath: [['$$','$$'], ['\\(', '\\)']]
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$$','$$'], ['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
       }
-    });
+    };
   </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
   <style>
   body {
     font: 16px/1.5em 'Roboto Mono', 'Consolas', 'Andale Mono', 'Monaco', 'Courier New', Courier, monospace;
@@ -46,7 +45,6 @@
     color: #60728d;
     background-image: linear-gradient(to bottom,#60728d 75%,#60728d 75%);
     text-shadow: none;
-    /* text-shadow: -1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff; */
     background-repeat: repeat-x;
     background-size: 1px 1px;
     background-position: 0 96%;
@@ -59,9 +57,6 @@
   .heading {
     margin: 0 0 2ch;
     padding: 0;
-  }
-  article.txt p {
-    white-space: pre-wrap;
   }
   .username a {
     text-shadow: none;
@@ -202,17 +197,6 @@
   .highlight .vi { color: #84608d } /* Name.Variable.Instance */
   .highlight .il { color: #84608d } /* Literal.Number.Integer.Long */
 
-  .about-avatar {
-    float: left;
-    width: 3.2em;
-    margin: 0 1em 1em 0;
-  }
-
-  @media screen and (max-width:480px) {
-    .about-avatar {
-      width: 4.1em;
-    }
-  }
   code {
     background-color: #1d1b1b;
     border: 0;

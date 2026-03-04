@@ -3,3 +3,14 @@ description: The personal website of Harrison Totty
 baseurl: "/"
 permalink: "/p/:title"
 url: 'https://harrison.totty.dev'
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - justfile
+  - README.md
+  - LICENSE
+  - .editorconfig
