@@ -132,4 +132,72 @@ I conjectured that TP-weight ReLU networks always produce positroid activation m
 
 All experiment code — including the training loop, matroid construction, positroid verification, and counterexample search — is available at [github.com/HarrisonTotty/positroid-structure-relu-networks](https://github.com/HarrisonTotty/positroid-structure-relu-networks).
 
+
+# Update: The Non-TP Baseline (2026-03-04)
+
+The second open question — does gradient descent on non-TP networks also produce only positroid matroids? — is now resolved. **TP structure matters.** Non-TP trained networks can produce non-positroid matroids; TP-trained networks never do.
+
+## The Experiment
+
+The challenge in designing a non-TP baseline is that most simple kernel alternatives (sinusoidal $$W_{ij} = 2 + \sin(a_i b_j)$$, quadratic distance $$W_{ij} = (a_i - b_j)^2 + 1$$) produce only uniform matroids during training — zero discriminating power. The exponential kernel has a _normal-convergence_ property: as parameters grow, hyperplane normals converge toward common directions, creating near-collinear normals and non-uniform matroids. Sinusoidal and quadratic kernels lack this.
+
+The key was to design a parameterization that preserves normal convergence while breaking total positivity. The **negated bidiagonal** construction does this: start with a TP exponential matrix $$E_{ij} = \exp(a_i b_j)$$, then left-multiply by a lower bidiagonal matrix $$B$$ with alternating signs on the subdiagonal ($$B_{i+1,i} = (-1)^{i+1} \cdot 1.5$$). The result $$W = BE$$ preserves the asymptotic convergence of the exponential kernel but disrupts total positivity through sign-scrambling in the finite regime.
+
+## Results
+
+Over 60 moons trials (20 per $$H \in \{6, 8, 10\}$$, 200 epochs each):
+
+| Mode | Non-positroid rate | Non-uniform rate |
+|------|-------------------|-----------------|
+| tp_exponential | **0/60** (0%) | 13/60 (~22%) |
+| negated_bidiagonal | **2/60** (~3%) | 15/60 (25%) |
+
+Both modes produce non-uniform matroids at comparable rates, so the comparison is fair. But only the negated bidiagonal mode produces non-positroids.
+
+{% endraw %}
+![TP vs negated bidiagonal comparison]({{site.url}}/images/positroid-fig6-baseline.png)
+
+_**Figure 5.** Non-positroid rates from 60 moons training trials per mode. TP exponential: zero non-positroids. Negated bidiagonal: 2 non-positroids (~3%). Both modes produce non-uniform matroids at comparable rates, so the difference is purely about positroid structure._
+{% raw %}
+
+The two non-positroid cases:
+
+1. **$$H=6$$, trial 11**: rank-3 matroid with 16/20 bases. Non-bases: $$\{1,3,4\}, \{1,3,5\}, \{1,4,5\}, \{3,4,5\}$$. Element 1 appears in 3 of 4 non-bases with gaps — a spread pattern, not a contiguous tail.
+
+2. **$$H=10$$, trial 13**: rank-3 matroid with 100/120 bases. Non-bases: 20 sets, all subsets of $$\{3,5,6,7,8,9\}$$ — but element 4 is skipped. The gap at element 4 creates a non-contiguous support.
+
+{% endraw %}
+![Non-base support patterns]({{site.url}}/images/positroid-fig5-support.png)
+
+_**Figure 6.** Non-base support on the circle. Left: TP exponential training produces a contiguous tail $$\{6,7,8,9\}$$ — always a positroid. Center and right: negated bidiagonal training produces gapped supports $$\{1,3,4,5\}$$ and $$\{3,5,6,7,8,9\}$$ — both non-positroids. The gaps (missing elements within the support range) are the structural signature of non-positroid matroids from training._
+{% raw %}
+
+## The Mechanism
+
+In TP-trained networks, the non-base support (the set of elements appearing in any non-basis) is always a contiguous tail $$\{H-m, H-m+1, \ldots, H-1\}$$ for some $$m \geq k$$. All $$\binom{m}{k}$$ subsets of this tail are non-bases, meaning those $$m$$ hyperplanes span a $$(k-1)$$-dimensional subspace. The TP constraint forces converging normals to have consecutive indices — the column ordering of a TP matrix enforces monotone convergence patterns.
+
+The bidiagonal perturbation disrupts this monotonicity. The alternating-sign subdiagonal of $$B$$ scrambles the row ordering locally, allowing non-consecutive normals to converge. This produces **gapped** non-base supports — and gapped supports correlate perfectly with non-positroid structure in our data.
+
+The causal chain is now clear:
+
+$$\text{TP structure} \;\Rightarrow\; \text{contiguous non-base support} \;\Rightarrow\; \text{positroid}$$
+
+The first arrow is an empirical observation about training dynamics on the TP manifold. The second arrow follows from a generalization of the Contiguous-Implies-Positroid theorem stated above: the _Contiguous-Support Positroid Theorem_ states that if every non-basis of a rank-$$k$$ matroid on $$[n]$$ is contained in a cyclic interval $$T$$ with $$\operatorname{rank}(T) \leq k - 1$$, then the matroid is a positroid. A contiguous tail of $$m$$ elements spanning a $$(k-1)$$-dimensional subspace is exactly such an interval — so the tail-collapse pattern observed in TP training always gives a positroid.
+
+Note that individual non-bases within the tail need not themselves be cyclic intervals (and often aren't at larger $$H$$), so the original Contiguous-Implies-Positroid theorem is not the full explanation. The Contiguous-Support generalization covers these cases.
+
+{% endraw %}
+![Causal chain: TP → contiguous → positroid]({{site.url}}/images/positroid-fig7-mechanism.png)
+
+_**Figure 7.** The positroid mechanism. Top: TP weights produce contiguous non-base support during training, which guarantees positroid structure by theorem. Bottom: non-TP weights can produce gapped support, which can violate the Grassmann necklace. Both paths use gradient descent — the difference is the weight constraint._
+{% raw %}
+
+## Revised Conjecture
+
+The Trained Positroid Conjecture should be stated as TP-specific:
+
+> _For networks with TP weight matrices trained by gradient descent, the affine matroid is always a positroid._
+
+The TP constraint is essential, not merely sufficient. Non-TP networks with the same convergence properties and comparable training accuracy can and do produce non-positroid matroids during training.
+
 {% endraw %}

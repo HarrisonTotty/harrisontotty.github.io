@@ -149,6 +149,43 @@ If true, this connects positroid combinatorics to the _implicit bias_ of gradien
 
 **What happens with deeper networks?** All experiments used single-hidden-layer networks. Multi-layer networks compose multiple hyperplane arrangements, and the interaction between layers could produce richer matroid structure.
 
+
+# Update: TP Structure Matters (2026-03-04)
+
+The first open question — does TP structure matter? — now has an answer: **yes**.
+
+I designed a non-TP weight parameterization called **negated bidiagonal** that preserves the key property making exponential networks produce non-trivial matroids (hyperplane normals that converge during training) while breaking total positivity. The construction is: take the usual TP exponential matrix, then multiply it by a bidiagonal matrix with alternating $$\pm$$ signs on the subdiagonal. This scrambles the row ordering just enough to break TP while preserving the training dynamics that create near-collinear normals.
+
+The result: over 60 training runs on the moons dataset, negated bidiagonal networks produced **2 non-positroid matroids** (~3%). TP exponential networks produced **zero** over the same 60 runs. Both modes create non-uniform matroids at similar rates (~22-25%), so the comparison is fair — the difference is purely about whether the non-bases have positroid structure.
+
+{% endraw %}
+![TP vs negated bidiagonal comparison]({{site.url}}/images/positroid-fig6-baseline.png)
+
+_**Figure 7.** Non-positroid rates from 60 moons training trials per mode. TP exponential: zero non-positroids. Negated bidiagonal: 2 non-positroids (~3%)._
+{% raw %}
+
+What distinguishes the non-positroid cases is the **support pattern**. In TP networks, the elements appearing in non-bases always form a contiguous block — a run of consecutive indices like $$\{6, 7, 8, 9\}$$. In the two non-positroid cases from negated bidiagonal training, the support has **gaps**: $$\{1,3,4,5\}$$ (skipping 2) and $$\{3,5,6,7,8,9\}$$ (skipping 4). These gapped supports are exactly the "spread" patterns from Figure 4 that break the positroid property — but now they're arising from _training_, not deliberate construction.
+
+{% endraw %}
+![Non-base support patterns]({{site.url}}/images/positroid-fig5-support.png)
+
+_**Figure 8.** Non-base support on the circle. Left: TP training produces a contiguous tail — always a positroid. Center and right: non-TP training produces gapped supports — both non-positroids. The gaps are the structural signature that breaks positroid structure._
+{% raw %}
+
+The explanation: total positivity forces the normals to converge in index order. When normals become near-collinear, they're always _neighbors_ — consecutive indices — so the non-base support is contiguous, and the theorem guarantees a positroid. The bidiagonal perturbation breaks this ordering, allowing non-consecutive normals to converge, creating the gaps that lead to non-positroids.
+
+{% endraw %}
+![Causal chain: TP → contiguous → positroid]({{site.url}}/images/positroid-fig7-mechanism.png)
+
+_**Figure 9.** The full picture. TP weights produce contiguous non-base support during training, which guarantees positroid structure by theorem. Non-TP weights can produce gapped support, which breaks the positroid property. Both paths use gradient descent — the difference is the weight constraint._
+{% raw %}
+
+The revised conjecture is now explicitly TP-specific:
+
+> _For networks with **TP** weight matrices trained by gradient descent, the affine matroid is always a positroid._
+
+This is a statement about the joint interaction of TP structure and gradient descent. Neither alone is sufficient: TP matrices with adversarial biases produce non-positroids (the 12,642 counterexamples), and non-TP trained networks sometimes produce non-positroids (the 2 cases above). It's the combination that enforces positroid geometry.
+
 ---
 
 All experiment code is available at [github.com/HarrisonTotty/positroid-structure-relu-networks](https://github.com/HarrisonTotty/positroid-structure-relu-networks).
