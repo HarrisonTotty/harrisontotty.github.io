@@ -109,7 +109,11 @@ And here's the punchline: across all 800+ _training_ trials, [gradient descent](
 
 The zero in the left column of Figure 5 isn't a coincidence. It's a theorem.
 
+<div class="theorem" markdown="1">
+
 **Theorem.** _If every non-basis of a matroid is a cyclic interval, then the matroid is a positroid._
+
+</div>
 
 The intuition is this: a cyclic interval like $$\{j, j+1, \ldots, j+k-1\}$$ is, in a precise sense, the "first $$k$$ elements" when you start counting from position $$j$$ around the circle. Positroids are characterized by a reconstruction procedure that builds the matroid by looking at the first basis in each of $$n$$ cyclic orderings. When a non-basis is a cyclic interval, it's exactly the set that this reconstruction procedure checks first at one of its starting positions — and because it's not a basis, the procedure correctly excludes it. But when a non-basis is spread, it can slip through the reconstruction filter at every starting position, creating an inconsistency that breaks the positroid property.
 
@@ -119,7 +123,11 @@ The intuition is this: a cyclic interval like $$\{j, j+1, \ldots, j+k-1\}$$ is, 
 
 There's also a clean if-and-only-if for the simplest case:
 
+<div class="corollary" markdown="1">
+
 **Corollary.** _Start with the uniform matroid (every subset is a basis) and remove a single subset. The result is a positroid if and only if that subset is a cyclic interval._
+
+</div>
 
 This was verified exhaustively for all parameters up to $$n = 9$$.
 

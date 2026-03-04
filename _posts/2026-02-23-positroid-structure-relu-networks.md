@@ -68,7 +68,11 @@ But the zero in the left column of Figure 3 demands explanation. Why should cont
 
 It is a theorem.
 
+<div class="theorem" markdown="1">
+
 **Theorem.** _Let $$M$$ be a matroid of rank $$k$$ on $$[n] = \{0, 1, \ldots, n-1\}$$. If every non-basis of $$M$$ is a cyclic interval — a set of the form $$\{j, j+1, \ldots, j+k-1\} \bmod n$$ — then $$M$$ is a positroid._
+
+</div>
 
 The proof uses the Grassmann necklace / Gale reconstruction characterization: a matroid is a positroid if and only if its basis set $$\mathcal{B}$$ equals the Gale reconstruction set $$\mathcal{R}$$ from its Grassmann necklace.
 
@@ -80,7 +84,11 @@ Since every non-basis is a cyclic interval, every non-basis is excluded from $$\
 
 There's also a clean if-and-only-if for single removals.
 
+<div class="corollary" markdown="1">
+
 **Corollary.** _For $$2 \leq k \leq n-2$$, the matroid $$U(k,n) \setminus \{S\}$$ (uniform matroid with one basis removed) is a positroid if and only if $$S$$ is a cyclic interval._
+
+</div>
 
 The forward direction is the theorem. The backward direction: if $$S$$ is not a cyclic interval, then every cyclic interval $$\{j, \ldots, j+k-1\}$$ is still a basis, so the Grassmann necklace satisfies $$I_j = \{j, \ldots, j+k-1\}$$ for all $$j$$. Since every $$k$$-subset Gale-dominates the Gale-minimum, $$S$$ passes all $$n$$ Gale conditions and $$S \in \mathcal{R}$$. But $$S \notin \mathcal{B}$$, so $$\mathcal{R} \neq \mathcal{B}$$ and the matroid is not a positroid.
 
@@ -196,11 +204,17 @@ _**Figure 7.** The positroid mechanism. Top: TP weights produce contiguous non-b
 
 The second arrow in the causal chain — contiguous support implies positroid — is a theorem that generalizes the Contiguous-Implies-Positroid result from above.
 
+<div class="theorem" markdown="1">
+
 **Theorem (Contiguous-Support Positroid).** _Let $$M$$ be a rank-$$k$$ matroid on $$[n]$$. If for every non-basis $$S$$ of $$M$$ there exists a cyclic interval $$T_S \supseteq S$$ with $$\operatorname{rank}_M(T_S) \leq k - 1$$, then $$M$$ is a positroid._
+
+</div>
 
 The original theorem is the special case where each non-basis $$S$$ is itself a cyclic interval (take $$T_S = S$$; a $$k$$-element dependent set trivially has rank $$\leq k - 1$$). The new theorem also covers the experimentally observed _tail-collapse_ pattern: all non-bases are subsets of a single contiguous tail $$T = \{H-m, \ldots, H-1\}$$ with $$\operatorname{rank}(T) \leq k - 1$$, and the individual non-bases within the tail need not be cyclic intervals.
 
 ### Proof
+
+<div class="proof" markdown="1">
 
 We show $$\mathcal{B} = \mathcal{R}$$ using the Grassmann necklace / Gale reconstruction characterization.
 
@@ -219,13 +233,23 @@ At index $$\ell = r + 1$$: the $$(r+1)$$-th smallest element of $$I_j$$ is in $$
 
 Since every non-basis is excluded from $$\mathcal{R}$$, we have $$\mathcal{R} \subseteq \mathcal{B}$$. Combined with $$\mathcal{B} \subseteq \mathcal{R}$$: $$\mathcal{B} = \mathcal{R}$$, so $$M$$ is a positroid. $$\square$$
 
+</div>
+
 ### Corollary: Tail-Collapse Positroid
 
 The experimentally observed pattern is a strict special case of the theorem.
 
+<div class="corollary" markdown="1">
+
 **Corollary.** _Let $$M$$ be a rank-$$k$$ matroid on $$[n]$$. If the non-bases of $$M$$ are exactly the $$k$$-subsets of some cyclic interval $$T \subseteq [n]$$ with $$\lvert T \rvert \geq k$$, then $$M$$ is a positroid._
 
+</div>
+
+<div class="proof" markdown="1">
+
 _Proof._ Every $$k$$-subset of $$T$$ is a non-basis, so $$\operatorname{rank}(T) \leq k - 1$$. Take $$T_S = T$$ for every non-basis $$S$$. The main theorem applies. $$\square$$
+
+</div>
 
 This is exactly what TP training produces: the non-bases are all $$\binom{m}{k}$$ subsets of a contiguous tail $$T = \{H-m, \ldots, H-1\}$$, where those $$m$$ hyperplanes span a $$(k-1)$$-dimensional subspace. Note that the individual non-bases within the tail — sets like $$\{5, 7, 9\} \subset \{5, 6, 7, 8, 9\}$$ — are typically _not_ cyclic intervals, so the original Contiguous-Implies-Positroid theorem does not apply to them. The tail-collapse corollary handles these cases because it only requires the _support_ to be a cyclic interval, not each non-basis individually.
 
