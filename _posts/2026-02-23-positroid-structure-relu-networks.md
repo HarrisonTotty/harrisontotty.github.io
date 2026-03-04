@@ -192,6 +192,39 @@ Note that individual non-bases within the tail need not themselves be cyclic int
 _**Figure 7.** The positroid mechanism. Top: TP weights produce contiguous non-base support during training, which guarantees positroid structure by theorem. Bottom: non-TP weights can produce gapped support, which can violate the Grassmann necklace. Both paths use gradient descent — the difference is the weight constraint._
 {% raw %}
 
+## The Contiguous-Support Positroid Theorem
+
+The second arrow in the causal chain — contiguous support implies positroid — is a theorem that generalizes the Contiguous-Implies-Positroid result from above.
+
+**Theorem (Contiguous-Support Positroid).** _Let $$M$$ be a rank-$$k$$ matroid on $$[n]$$. If for every non-basis $$S$$ of $$M$$ there exists a cyclic interval $$T_S \supseteq S$$ with $$\operatorname{rank}_M(T_S) \leq k - 1$$, then $$M$$ is a positroid._
+
+The original theorem is the special case where each non-basis $$S$$ is itself a cyclic interval (take $$T_S = S$$; a $$k$$-element dependent set trivially has rank $$\leq k - 1$$). The new theorem also covers the experimentally observed _tail-collapse_ pattern: all non-bases are subsets of a single contiguous tail $$T = \{H-m, \ldots, H-1\}$$ with $$\operatorname{rank}(T) \leq k - 1$$, and the individual non-bases within the tail need not be cyclic intervals.
+
+### Proof
+
+We show $$\mathcal{B} = \mathcal{R}$$ using the Grassmann necklace / Gale reconstruction characterization.
+
+**$$\mathcal{B} \subseteq \mathcal{R}$$** is the standard greedy argument (every basis Gale-dominates the necklace entry in each cyclic order).
+
+**$$\mathcal{R} \subseteq \mathcal{B}$$** requires showing every non-basis is excluded from $$\mathcal{R}$$. Let $$S$$ be a non-basis, and let $$T \supseteq S$$ be a cyclic interval with $$\operatorname{rank}(T) \leq k - 1$$. Write $$T = \{j, j+1, \ldots, j+\lvert T \rvert-1\}$$ and $$F = [n] \setminus T$$.
+
+In the cyclic order $$\leq_j$$, every element of $$T$$ precedes every element of $$F$$. The greedy algorithm computing the necklace entry $$I_j$$ processes all of $$T$$ first, selecting at most $$\operatorname{rank}(T) \leq k - 1$$ elements from $$T$$. It then continues into $$F$$ to reach size $$k$$, so $$I_j$$ contains at least one element of $$F$$.
+
+Now compare $$S$$ and $$I_j$$ in the $$\leq_j$$ order. Let $$r = \operatorname{rank}(T)$$. Then:
+
+- $$I_j$$ has $$r$$ elements from $$T$$ (at positions $$\leq \lvert T \rvert - 1$$) and $$k - r$$ elements from $$F$$ (at positions $$\geq \lvert T \rvert$$).
+- $$S \subseteq T$$, so all $$k$$ elements of $$S$$ sit at positions $$\leq \lvert T \rvert - 1$$.
+
+At index $$\ell = r + 1$$: the $$(r+1)$$-th smallest element of $$I_j$$ is in $$F$$ (position $$\geq \lvert T \rvert$$), while the $$(r+1)$$-th smallest element of $$S$$ is in $$T$$ (position $$\leq \lvert T \rvert - 1$$). So $$s_{r+1} <_j i_{r+1}$$, and the Gale condition $$S \geq_j I_j$$ fails. Therefore $$S \notin \mathcal{R}$$.
+
+Since every non-basis is excluded from $$\mathcal{R}$$, we have $$\mathcal{R} \subseteq \mathcal{B}$$. Combined with $$\mathcal{B} \subseteq \mathcal{R}$$: $$\mathcal{B} = \mathcal{R}$$, so $$M$$ is a positroid. $$\square$$
+
+### A Necessary Subtlety
+
+The hypothesis requires $$\operatorname{rank}(T) \leq k - 1$$, not merely $$S \subseteq T$$. The distinction matters: $$U(2,5) \setminus \{\{0,2\}\}$$ has its only non-basis $$\{0,2\}$$ contained in the cyclic interval $$T = \{0,1,2\}$$, but $$\operatorname{rank}(T) = 2 = k$$. The necklace entry $$I_0 = \{0,1\}$$ stays entirely within $$T$$ — no escape to $$F$$ — and $$\{0,2\}$$ passes all Gale conditions, giving $$\{0,2\} \in \mathcal{R} \setminus \mathcal{B}$$. Not a positroid.
+
+The rank condition ensures that the necklace entry _must_ escape $$T$$ into the complement, creating the Gale gap that excludes all $$k$$-subsets of $$T$$ from $$\mathcal{R}$$. Verified exhaustively for 627 configurations (all cyclic intervals $$T$$ with $$\lvert T \rvert \geq k$$ on $$[n]$$, $$n \leq 9$$).
+
 ## Revised Conjecture
 
 The Trained Positroid Conjecture should be stated as TP-specific:
