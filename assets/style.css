@@ -1,0 +1,276 @@
+/* Base */
+body {
+  font: 16px/1.5em 'Roboto Mono', 'Consolas', 'Andale Mono', 'Monaco', 'Courier New', Courier, monospace;
+  padding: 1ch;
+  margin: 0;
+}
+body .username:after {
+  content: ' ✐';
+}
+body.index .username:after {
+  content: ' ⌂';
+}
+body.papers .username:after {
+  content: ' 🗎';
+}
+main, footer, body > header {
+  max-width: 80ch;
+  margin: auto;
+}
+main {
+  box-sizing: border-box;
+  padding: 1ch 0 2ch;
+  min-height: calc(100vh - 12ch);
+}
+h1 {
+  font-size: 1em;
+  font-weight: 700;
+}
+h1, .timestamp {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+}
+a {
+  color: #60728d;
+  background-image: linear-gradient(to bottom, #60728d 75%, #60728d 75%);
+  text-shadow: none;
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  background-position: 0 96%;
+  text-decoration: none;
+}
+.heading a {
+  color: #1d1b1b;
+  background-image: linear-gradient(to bottom, #1d1b1b 75%, #1d1b1b 75%);
+}
+.heading {
+  margin: 0 0 2ch;
+  padding: 0;
+}
+.username a {
+  text-shadow: none;
+  background-image: none;
+  background-color: #1d1b1b;
+  color: #fff;
+  padding: 1ch;
+  border: 0;
+}
+hr {
+  border: 1px solid #ddd8cf;
+}
+p {
+  margin: 1.5em 0;
+}
+pre {
+  padding: 1ch;
+  background-color: #ddd8cf;
+  overflow-x: auto;
+}
+ul, ol {
+  padding-left: 0;
+}
+li > ul, li > ol {
+  padding-left: 2ch;
+}
+blockquote {
+  font-style: italic;
+  margin: 1.5em 2ch;
+}
+img {
+  max-width: 100%;
+}
+footer a {
+  color: #abafb6;
+  background-image: none;
+  text-decoration: none;
+}
+code {
+  background-color: #1d1b1b;
+  color: #ddd8cf;
+  padding: 2px 3px;
+}
+@media screen and (min-width: 1367px) {
+  body {
+    font: 20px/1.75em 'Roboto Mono';
+  }
+  hr {
+    border: 4px solid #abafb6;
+  }
+}
+
+/* Article/post styles */
+article.md h1 {
+  font-size: 110%;
+}
+article.md h1:not(.heading h1) {
+  border-bottom: 1px solid #abafb6;
+  padding-bottom: 0.3em;
+  margin: 2em 0 1em;
+}
+article.md h2 {
+  font-size: 105%;
+  margin: 2em 0 1em;
+}
+article.md h3 {
+  font-size: 100%;
+  color: #60728d;
+  margin: 1.5em 0 0.75em;
+}
+article.md h4, article.md h5, article.md h6 {
+  font-size: 100%;
+  font-weight: 700;
+  color: #abafb6;
+  margin: 1.5em 0 0.75em;
+}
+article.md hr {
+  border: 1px solid #abafb6;
+}
+article.md code {
+  border: 0;
+  color: #fff;
+  font-size: 80%;
+}
+article.md table {
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+article.md th, article.md td {
+  padding: 0.4em 1.5ch;
+  border-bottom: 1px solid #abafb6;
+}
+article.md th {
+  text-align: left;
+}
+
+/* Video embeds */
+video {
+  width: 100%;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.video-container.skinny {
+  padding-bottom: 43.076923%;
+}
+.video-container.slate {
+  padding-bottom: 50%;
+  margin-bottom: 1em;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Syntax highlighting */
+.highlight { margin: 0; background: #1d1b1b; color: #fff }
+.highlight .hll { background-color: #b6b0ab }
+.highlight .c { color: #abafb6; font-style: italic }
+.highlight .err { color: indianred; background-color: #b6b0ab }
+.highlight .k { color: #fff; font-weight: bold }
+.highlight .o { color: #fff; font-weight: bold }
+.highlight .cm { color: #8d7260; font-style: italic }
+.highlight .cp { color: #8d7260; font-weight: bold; font-style: italic }
+.highlight .c1 { color: #8d7260; font-style: italic }
+.highlight .cs { color: #8d7260; font-weight: bold; font-style: italic }
+.highlight .gd { color: #1d1b1b; background-color: #ffdddd }
+.highlight .ge { color: #1d1b1b; font-style: italic }
+.highlight .gr { color: indianred }
+.highlight .gh { color: #abafb6 }
+.highlight .gi { color: #1d1b1b; background-color: #ddffdd }
+.highlight .go { color: #abafb6 }
+.highlight .gp { color: #8d7260 }
+.highlight .gs { font-weight: bold }
+.highlight .gu { color: #abafb6 }
+.highlight .gt { color: indianred }
+.highlight .kc { color: #abafb6; font-weight: bold }
+.highlight .kd { color: #abafb6; font-weight: bold }
+.highlight .kn { color: #abafb6; font-weight: bold }
+.highlight .kp { color: #abafb6; font-weight: bold }
+.highlight .kr { color: #abafb6; font-weight: bold }
+.highlight .kt { color: #385074; font-weight: bold }
+.highlight .m { color: #608d7b }
+.highlight .s { color: #60728d }
+.highlight .na { color: #60728d }
+.highlight .nb { color: #60728d }
+.highlight .nc { color: #385074; font-weight: bold }
+.highlight .no { color: #608d7b }
+.highlight .nd { color: #698d60; font-weight: bold }
+.highlight .ni { color: #84608d }
+.highlight .ne { color: indianred; font-weight: bold }
+.highlight .nf { color: indianred; font-weight: bold }
+.highlight .nl { color: indianred; font-weight: bold }
+.highlight .nn { color: #abafb6 }
+.highlight .nt { color: #385074 }
+.highlight .nv { color: #608d7b }
+.highlight .ow { color: #fff; font-weight: bold }
+.highlight .w { color: #abafb6 }
+.highlight .mf { color: #60728d }
+.highlight .mh { color: #60728d }
+.highlight .mi { color: #60728d }
+.highlight .mo { color: #60728d }
+.highlight .sb { color: #60728d }
+.highlight .sc { color: #60728d }
+.highlight .sd { color: #60728d }
+.highlight .s2 { color: #60728d }
+.highlight .se { color: #60728d }
+.highlight .sh { color: #60728d }
+.highlight .si { color: #60728d }
+.highlight .sx { color: #60728d }
+.highlight .sr { color: #698d60 }
+.highlight .s1 { color: #60728d }
+.highlight .ss { color: #84608d }
+.highlight .bp { color: #abafb6 }
+.highlight .vc { color: #84608d }
+.highlight .vg { color: #84608d }
+.highlight .vi { color: #84608d }
+.highlight .il { color: #84608d }
+
+/* Callout blocks */
+.theorem, .lemma, .corollary, .definition, .proof {
+  border-left: 3px solid #60728d;
+  padding: 0.75em 1.5ch;
+  margin: 1.5em 0;
+  background-color: rgba(96, 114, 141, 0.06);
+}
+.theorem em, .lemma em, .corollary em, .definition em {
+  font-style: italic;
+}
+.theorem ul, .theorem ol,
+.lemma ul, .lemma ol,
+.corollary ul, .corollary ol,
+.proof ul, .proof ol {
+  padding-left: 2ch;
+}
+.proof {
+  border-left-color: #abafb6;
+  background-color: rgba(171, 175, 182, 0.06);
+}
+.falsified {
+  border-left: 3px solid #cd5c5c;
+  padding: 0.75em 1.5ch;
+  margin: 1.5em 0;
+  background-color: rgba(205, 92, 92, 0.06);
+}
+.confirmed {
+  border-left: 3px solid #608d7b;
+  padding: 0.75em 1.5ch;
+  margin: 1.5em 0;
+  background-color: rgba(96, 141, 123, 0.06);
+}
+.ambiguous {
+  border-left: 3px solid #8d7260;
+  padding: 0.75em 1.5ch;
+  margin: 1.5em 0;
+  background-color: rgba(141, 114, 96, 0.06);
+}

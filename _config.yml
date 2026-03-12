@@ -7,6 +7,13 @@ url: 'https://harrison.totty.dev'
 plugins:
   - jekyll-seo-tag
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      mathjax: true
+
 exclude:
   - Gemfile
   - Gemfile.lock
