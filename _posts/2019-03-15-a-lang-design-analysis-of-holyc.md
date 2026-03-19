@@ -14,11 +14,11 @@ This article won't cover the assembly layer of TempleOS, but the above is intere
 
 # Numeric Types in HolyC
 
-_HolyC_ allows the following numeric types: `U0`, `I8`, `U8`, `I16`, `U16`, `I32`, `U32`, `I64`, `U64`, and `F64`. As you probably would guess, a `U` vs `I` prefix denotes a signed/unsigned integer/float and the numerical value represents the number of bits associated with the type. The two most interesting types are `U0` and `F64`. 
+_HolyC_ allows the following numeric types: `U0`, `I8`, `U8`, `I16`, `U16`, `I32`, `U32`, `I64`, `U64`, and `F64`. As you probably would guess, a `U` vs `I` prefix denotes an unsigned/signed integer, `F` denotes a float, and the numerical value represents the number of bits associated with the type. The two most interesting types are `U0` and `F64`. 
 
-`U0` is essentially `void` but with _zero_ size. In regular _C_, `void` is actually considered a [Unit Type](https://en.wikipedia.org/wiki/Unit_type) and thus when computing `sizeof(void)` in GCC, you will find that it resolves to `1`. `U0` is actually closer to a [Bottom Type](https://en.wikipedia.org/wiki/Bottom_type), like `!` in Rust.
+`U0` is essentially `void` but with _zero_ size. In regular _C_, `void` is actually considered a [Unit Type](https://en.wikipedia.org/wiki/Unit_type) and thus when computing `sizeof(void)` in GCC, you will find that it resolves to `1`. `U0` is still a void-like type (the function returns, it just carries no value), but with a truly zero-sized representation.
 
-`F64` is interesting because it is the only _float_ available in _HolyC_. I can't find a specified reason in the source code, but I presume it is a combination of "if you're going to do floating-point operations, wouldn't you pretty much always want maximum precision by definition?" and maybe the fact that 
+`F64` is interesting because it is the only _float_ available in _HolyC_. I can't find a specified reason in the source code, but I presume it is a combination of "if you're going to do floating-point operations, wouldn't you pretty much always want maximum precision by definition?" and the fact that all values are extended to 64-bit when accessed:
 
 > All values are extended to 64-bit when accessed. Intermediate calculations are done with 64-bit values.
 
@@ -32,10 +32,10 @@ U0 Main()
     j1=i1=0x12345678;  // i1 is 0x5678 but j1 is 0x12345678
     
     I64 i2=0x8000000000000000;
-    Print("%X\n", i2>>1);  // Prints 0xC0000000000000000
+    Print("%X\n", i2>>1);  // Prints 0xC000000000000000
     
     U64 u3=0x8000000000000000;
-    Print("%X\n", u3>>1);  // Prints 0x40000000000000000
+    Print("%X\n", u3>>1);  // Prints 0x4000000000000000
     
     I32 i4=0x80000000;     // This is loaded into a 64-bit register variable.
     Print("%X\n", i4>>1);  // Prints 0x40000000
@@ -100,7 +100,7 @@ I64 x = Sum(3, 4, 5); // x = 12
 
 Note that `for` loops don't require curly braces if they only perform one operation. This is true in both C and HolyC.
 
-Finally, _HolyC_ does _not_ have a required `Main()` function. Expressions outside of functions are simply evaluated from top to bottom in source. This also allows the programming language to act like a shell, and in-fact _is_ the shell of TempleOS.
+Finally, _HolyC_ does _not_ have a required `Main()` function. Expressions outside of functions are simply evaluated from top to bottom in source. This also allows the programming language to act like a shell, and in fact _is_ the shell of TempleOS.
 
 
 # Switch Statements
@@ -159,7 +159,7 @@ The above code will print `Zero [One] Two [Three] Four [Five]` to the command li
 
 # The `#exe {}` Expression
 
-This is my personal favorite feature. This expression allows you to write code or execute programs whose output is embedded into the rest of your source code at compile time. This let you do things like:
+This is my personal favorite feature. This expression allows you to write code or execute programs whose output is embedded into the rest of your source code at compile time. This lets you do things like:
 
 ```c
 #include #exe { /* code to find location of library */ }
@@ -172,9 +172,13 @@ This is essentially _HolyC_'s solution to _macros_.
 
 * In _HolyC_, you can `Free()` a null pointer (this is also true in C). 
 * The stack does not grow because _HolyC_ does not utilize virtual memory.
-* There is no `continue` keyword in the language. Instead, Terry urges programmers to use `goto`'s instead.
+* There is no `continue` keyword in the language. Terry instead urges programmers to use `goto`'s.
 * There is no `#define` capability. Terry's explanation for this is that he's just "not a fan".
 * The `typedef` keyword is replaced with `class`.
 * `#include` does not support `<>` for importing standard libraries. All `#include` statements must use `""`.
-* There is no type checking what-so-ever.
+* There is no type checking whatsoever.
 * `try {}`, `catch {}`, and `throw` are supported, however `throw` only returns up to an 8-byte `char` argument, which may be accessed in a `catch {}` as `Fs->except_ch`.
+
+---
+
+_**Update (Mar 19 2026):** Many overdue corrections were made to this post._
