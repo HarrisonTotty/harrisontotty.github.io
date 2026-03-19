@@ -67,6 +67,7 @@ pre {
   padding: 1ch;
   background-color: #ddd8cf;
   overflow-x: auto;
+  line-height: 1.3em;
 }
 ul, ol {
   padding-left: 0;
