@@ -3,24 +3,137 @@ layout: post
 title: About
 ---
 
-Hello there! I see you've somehow stumbled upon my little corner of the internet. Pull up a chair and grab a nice cup of your favorite tea while I tell you a little bit about myself and my history.
+Hello there! I see you've somehow stumbled upon my little corner of the
+internet. Pull up a chair and grab a nice cup of your favorite tea while I tell
+you a little bit about myself and my history.
 
-I was lucky enough to be introduced to computers at a very early age. Probably the first program I ever interacted with was DOOM when I was 3 or 4 years old. Back then the monsters used to scare me, so I'd ask my dad to set up the levels without monsters. I was fascinated by the ability to simulate virtual worlds and by fourth grade I was beginning to make my own video games with Game Maker and FPS Creator. The games themselves were pretty crude, as I was more focused on pushing the simulation to its limits rather than designing rewarding gameplay or expressing myself artistically. I got deep into the game engine modding community, extending the limited capabilities of FPS Creator to support things like allied AI. This reached its zenith in 2007 when Crysis was released. CryEngine was the perfect sandbox for me. I'd spend hours and hours building large-scale AI battles and designing silly weapons that played with the physics of the environment. The more I got into computers, the more this love for physics in video game worlds would shift into a love of physics in simulations of our world.
+I was lucky enough to be introduced to computers at a very early age. Probably
+the first program I ever interacted with was DOOM when I was 3 or 4 years old.
+Back then the monsters used to scare me, so I'd ask my dad to set up the levels
+without monsters. I was fascinated by the ability to simulate virtual worlds and
+by fourth grade I was beginning to make my own video games with Game Maker and
+FPS Creator. The games themselves were pretty crude, as I was more focused on
+pushing the simulation to its limits rather than designing rewarding gameplay or
+expressing myself artistically. I got deep into the game engine modding
+community, extending the limited capabilities of FPS Creator to support things
+like allied AI. This reached its zenith in 2007 when Crysis was released.
+CryEngine was the perfect sandbox for me. I'd spend hours and hours building
+large-scale AI battles and designing silly weapons that played with the physics
+of the environment. The more I got into computers, the more this love for
+physics in video game worlds would shift into a love of physics in simulations
+of our world.
 
-I was not a particularly good student in high school. I would rarely do homework but would typically excel at tests (which would drive my teachers bonkers). I was stubborn and uninspired by public school, and very introverted. We didn't have computer or programming courses at my high school, so everything I learned I did on my own time after school. When it came time to select where I'd like to go to college, I settled for a public university close to my parent's house. I started college in 2011 seeking a degree in Computer Engineering. The degree selection was fairly arbitrary - I was told that degrees in computer engineering degrees made more money than those in computer science. I had no real aim for what I wanted to do in my life, and so I started in the Fall thinking I could get away with the same half-assed effort I had put in high school.
+I was not a particularly good student in high school. I would rarely do homework
+but would typically excel at tests (which would drive my teachers bonkers). I
+was stubborn and uninspired by public school, and very introverted. We didn't
+have computer or programming courses at my high school, so everything I learned
+I did on my own time after school. When it came time to select where I'd like to
+go to college, I settled for a public university close to my parents' house. I
+started college in 2011 seeking a degree in Computer Engineering. The degree
+selection was fairly arbitrary - I was told that degrees in computer engineering
+made more money than those in computer science. I had no real aim for what I
+wanted to do in my life, and so I started in the Fall thinking I could get away
+with the same half-assed effort I had put in high school.
 
-Thankfully, that first semester in college was a slap in the face. I realized that I had never studied a day in my life and was suddenly drowning in what seemed like an impossibly hard semester. Despite this, I still found myself spending hours and hours learning about n-body simulations and cellular automata. That first semester I barely squeaked by with a C- average, but the following semesters would absolutely wreck me. I end up dropping out of college with a 2.x GPA and took a semester off to rethink my life's path, before returning to college on my own dime (well, via student loans). This time, I would be seeking a degree in Physics. I started off extremely hard - taking up not only a research position simulating quantum vorticies in superconductors, but also as a student systems administrator for HPC. Around this time, my university was wanting to start a School of Cyber Security, and so myself and close friend threw our hats in the ring to help build out the program - as undergraduates! We started building up hackathons, capture the flag events, and even got permission from the university to experiment with vulnerabilities in the school's infrastructure - or so we thought.
+Thankfully, that first semester in college was a slap in the face. I realized
+that I had never studied a day in my life and was suddenly drowning in what
+seemed like an impossibly hard semester. Despite this, I still found myself
+spending hours and hours learning about n-body simulations and cellular
+automata. That first semester I barely squeaked by with a C- average, but the
+following semesters would absolutely wreck me. I ended up dropping out of
+college with a 2.x GPA and took a semester off to rethink my life's path, before
+returning to college on my own dime (well, via student loans). This time, I
+would be seeking a degree in Physics. I hit the ground running - taking up not
+only a research position simulating quantum vortices in superconductors, but
+also as a student systems administrator for HPC. Around this time, my university
+was wanting to start a School of Cyber Security, and so myself and a close
+friend threw our hats in the ring to help build out the program - as
+undergraduates! We started building up hackathons, capture the flag events, and
+even got permission from the university to experiment with vulnerabilities in
+the school's infrastructure - or so we thought.
 
-In the summer of 2014, my close friend and I decided to look into a vulnerability with the school's ID card system and presented our findings to the school's IT department. We had been granted permission to do so by our boss and the dean of the computer science department, but the key important fact is that we did NOT have permission from campus IT. Their action was swift and hard: immediate expulsion from the university followed up with a 2nd degree felony charge under the Computer Fraud and Abuse Act seeking a 15-year prison sentence, $100k fine, and neither of us would be able to touch another computer for the rest of our lives. A statement was made to the local news: two rogue students had maliciously hacked the university. I was devastated. My life and everything I had worked for was going to be over.
+In the summer of 2014, my close friend and I decided to look into a
+vulnerability with the school's ID card system and presented our findings to the
+school's IT department. We had been granted permission to do so by our boss and
+the dean of the computer science department, but the important fact is that we
+did NOT have permission from campus IT. Their action was swift and hard:
+immediate expulsion from the university followed up with a 2nd degree felony
+charge under the Computer Fraud and Abuse Act seeking a 15-year prison sentence,
+$100k fine, and neither of us would be able to touch another computer for the
+rest of our lives. A statement was made to the local news: two rogue students
+had maliciously hacked the university. I was devastated. My life and everything
+I had worked for was going to be over.
 
-I don't often get political on my blog, but this is an important time to tell you why I'm not writing this from inside a prison cell. We each roll the dice at our birth - some are born black, white, gay, rich, poor - you get it. I was born as a white male in a well-off family. My family was able to afford getting a good lawyer instead of a public defender. My family was able to bail me out of jail. My family's status and my skin color carried my innocence. You see, the general public doesn't know how to interpret computer related crimes, especially in places like rural Florida. They are constantly fed stories about evil "hackers" stealing their data. If I was to go to trial, I would most certainly be found guilty. How does one explain ARP poisoning to someone that when faced with a foreground window doesn't how to "make it go away"? How do I explain the nuance of public and private IP addresses? How do I explain that a MAC address has nothing to do with Apple? What I'm getting at, is that the outcome of my legal troubles would be based solely on the public's perception of me and my ability to meet the financial demands of the university.
+I don't often get political on my blog, but this is an important time to tell
+you why I'm not writing this from inside a prison cell. We each roll the dice at
+our birth - some are born black, white, gay, rich, poor - you get it. I was born
+as a white male in a well-off family. My family was able to afford getting a
+good lawyer instead of a public defender. My family was able to bail me out of
+jail. My family's status and my skin color carried my innocence. You see, the
+general public doesn't know how to interpret computer related crimes, especially
+in places like rural Florida. They are constantly fed stories about evil
+"hackers" stealing their data. If I was to go to trial, I would most certainly
+be found guilty. How does one explain ARP poisoning to someone that when faced
+with a foreground window doesn't know how to "make it go away"? How do I explain
+the nuance of public and private IP addresses? How do I explain that a MAC
+address has nothing to do with Apple? What I'm getting at, is that the outcome
+of my legal troubles would be based solely on the public's perception of me and
+my ability to meet the financial demands of the university.
 
-In the end, the only decision that could be made even with my privilege was for me to take their offer: pay them a lump sum in "damages", fix the vulnerability in question for them, and never seek a degree at a public university in the state of Florida. I would spend the next two years on probation, each month peeing into a cup to check for illegal substances and filling out a report on "what I accomplished". I couldn't get a regular job, because my record still showed that I had been charged with a 2nd degree felony, so I resorted to illegally selling ice cream on the beach for less than minimum wage. Each day, I would pay $1 to go over the Pensacola Beach toll bridge to make $4/hour. By this time, we had gotten the second and third terms of the agreement amended so that we no longer had to fix the "main" vulnerability and that I was only restricted from enrolling in that university as opposed to all Florida schools. My life would take me to Tallahassee, where I would start again.
+In the end, the only decision that could be made even with my privilege was for
+me to take their offer: pay them a lump sum in "damages", fix the vulnerability
+in question for them, and never seek a degree at a public university in the
+state of Florida. I would spend the next two years on probation, each month
+peeing into a cup to check for illegal substances and filling out a report on
+"what I accomplished". I couldn't get a regular job, because my record still
+showed that I had been charged with a 2nd degree felony, so I resorted to
+illegally selling ice cream on the beach for less than minimum wage. Each day, I
+would pay $1 to go over the Pensacola Beach toll bridge to make $4/hour. By this
+time, we had gotten the second and third terms of the agreement amended so that
+we no longer had to fix the "main" vulnerability and that I was only restricted
+from enrolling in that university as opposed to all Florida schools. My life
+would take me to Tallahassee, where I would start again.
 
-My new plan was to enroll in Tallahassee Community College and complete my AA degree. TCC likely wouldn't probe as much into my legal troubles, and could serve as an excellent launchpad to Florida State University. I dug in like before and knocked it out of the park. Three semesters of a 4.0 GPA. I got the highest grade in every one of my classes and was so proud of myself. I went above and beyond - teaching myself all of Barton Zwiebach's A First Course In String Theory, and writing my own computer algebra system for a dynamic sandbox n-body simulation program I called Simplex Universe. During my last semester, with the advice of my ODE professor I decided to apply to the 2016 Wolfram Summer School under the Computational Science track. At the time, Stephen Wolfram was one of my idols. The Wolfram Summer School during that time was no joke - only 60 applicants were selected from around the world, most of which were working on PhD's in Physics and Mathematics. I was elated when I was accepted. I felt like someone had finally recognized all of my hard work.
+My new plan was to enroll in Tallahassee Community College and complete my AA
+degree. TCC likely wouldn't probe as much into my legal troubles, and could
+serve as an excellent launchpad to Florida State University. I dug in like
+before and knocked it out of the park. Three semesters of a 4.0 GPA. I got the
+highest grade in every one of my classes and was so proud of myself. I went
+above and beyond - teaching myself all of Barton Zwiebach's A First Course In
+String Theory, and writing my own computer algebra system for a dynamic sandbox
+n-body simulation program I called Simplex Universe. During my last semester,
+with the advice of my ODE professor I decided to apply to the 2016 Wolfram
+Summer School under the Computational Science track. At the time, Stephen
+Wolfram was one of my idols. The Wolfram Summer School during that time was no
+joke - only 60 applicants were selected from around the world, most of whom were
+working on PhD's in Physics and Mathematics. I was elated when I was accepted. I
+felt like someone had finally recognized all of my hard work.
 
-The Wolfram Summer School was the most intellectually stimulating experience of my life. I knew about the pseudoscientific and grandiose claims dripping with ego made by Stephen Wolfram, but after cutting through the bullshit I found myself surrounded by the most intelligent people I have ever met. We'd spend hours and hours debating various interpretations of quantum mechanics. We'd talk about what the future of AI was going to look like (this was before AI was a hyperinflated buzzword). We'd talk about the current political climate. It was my first time interacting with intelligent people from all over the world - a sort of big bang of knowledge for me. It was hard to keep imposter syndrome at bay, but I felt like everyone there welcomed me with open arms. My project was largely a success, and landed me a job at Wolfram Research as the lead systems administrator for the Wolfram Cloud.
+The Wolfram Summer School was the most intellectually stimulating experience of
+my life. I knew about the pseudoscientific and grandiose claims dripping with
+ego made by Stephen Wolfram, but after cutting through the bullshit I found
+myself surrounded by the most intelligent people I have ever met. We'd spend
+hours and hours debating various interpretations of quantum mechanics. We'd talk
+about what the future of AI was going to look like (this was before AI was a
+hyperinflated buzzword). We'd talk about the current political climate. It was
+my first time interacting with intelligent people from all over the world - a
+sort of big bang of knowledge for me. It was hard to keep imposter syndrome at
+bay, but I felt like everyone there welcomed me with open arms. My project was
+largely a success, and landed me a job at Wolfram Research as the lead systems
+administrator for the Wolfram Cloud.
 
-I'll skip ahead for the sake of brevity. After Wolfram Research I found myself at Basis Technologies (then called Centro Inc.) where I architected their Kubernetes platform. It was honestly a great opportunity to be able have so much influence so early in my career. However by the end of it I found myself spending the majority of my time writing ADRs and other standards documents and decided that I needed a change. My next stop was W.W. Grainger, where I had the fortunate chance to reunite with old coworkers and transition into a more development-focused role with the security automation team. I've since branched into designing data analytics platforms with Streamlit and other data science tooling.
+I'll skip ahead for the sake of brevity. After Wolfram Research I found myself
+at Basis Technologies (then called Centro Inc.) where I architected their
+Kubernetes platform. It was honestly a great opportunity to be able to have so
+much influence so early in my career. However by the end of it I found myself
+spending the majority of my time writing ADRs and other standards documents and
+decided that I needed a change. My next stop was W.W. Grainger, where I had the
+fortunate chance to reunite with old coworkers and transition firstly into a
+more development-focused role with the security automation team and then later a
+staff position with the ML Platform team.
 
-Despite having a successsful career in software engineering, I still try to find time to dip my toes into physics and mathematics. I've put considerable effort in learning the ins and outs of neutral-atom quantum computing, the new cosmohedra/aplituhedra craze, and topics in mathematics adjacent to model theory. I hope to spend more time posting about these interests.
+Despite having a successful career in software engineering, I still try to find
+time to dip my toes into physics and mathematics. I've put considerable effort
+in learning the ins and outs of neutral-atom quantum computing, the new
+cosmohedra/amplituhedra craze, and topics in mathematics adjacent to model
+theory. I hope to spend more time posting about these interests.

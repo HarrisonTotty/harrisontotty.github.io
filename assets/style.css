@@ -43,7 +43,7 @@ a {
 }
 .heading a {
   color: #1d1b1b;
-  background-image: linear-gradient(to bottom, #1d1b1b 75%, #1d1b1b 75%);
+  background-image: none;
 }
 .heading {
   margin: 0 0 2ch;
@@ -98,6 +98,13 @@ code {
   hr {
     border: 4px solid #abafb6;
   }
+}
+
+/* Section headings */
+main > h1 {
+  border-bottom: 1px solid #abafb6;
+  padding-bottom: 0.3em;
+  margin: 0 0 1em;
 }
 
 /* Article/post styles */

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Matroid-Guided Pruning: Removing 70% of Neurons for Free"
+featured: true
 ---
 {% raw %}
 

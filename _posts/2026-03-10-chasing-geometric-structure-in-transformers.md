@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Chasing Geometric Structure in Transformers"
+featured: true
 ---
 I spent two weeks searching for a geometric structure in transformers.
 

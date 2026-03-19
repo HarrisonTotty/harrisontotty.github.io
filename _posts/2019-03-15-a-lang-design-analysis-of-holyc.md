@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A Language Design Analysis of HolyC"
+featured: true
 ---
 
 I was recently introduced to the story of [Terry A. Davis](https://en.wikipedia.org/wiki/Terry_A._Davis), a schizophrenic programmer who independently designed the free operating system [TempleOS](https://en.wikipedia.org/wiki/TempleOS). This article will not delve into the story of Terry or TempleOS, but instead the programming language Terry wrote specifically for developing the operating system - a language he dubbed "_HolyC_".

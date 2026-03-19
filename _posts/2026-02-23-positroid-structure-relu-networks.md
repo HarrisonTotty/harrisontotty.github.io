@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Positroid Structure in ReLU Networks"
+featured: true
 ---
 {% raw %}
 

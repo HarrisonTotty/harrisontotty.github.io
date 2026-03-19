@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Hidden Geometry of ReLU Networks"
+featured: true
 ---
 {% raw %}
 
